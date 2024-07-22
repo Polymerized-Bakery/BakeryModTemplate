@@ -12,7 +12,6 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xyz.merith.oven.ItemGroups.GroupFactory;
-import xyz.merith.oven.Tests.TestTools;
 import xyz.merith.oven.Tools.ToolFactory;
 import xyz.merith.oven.Tools.ToolMaterialFactory;
 
