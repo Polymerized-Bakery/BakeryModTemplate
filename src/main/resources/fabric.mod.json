@@ -16,18 +16,19 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"xyz.merith.Bakery.Template.BakersEntrypoint"
+			"xyz.merith.Bakery.Template.Entrypoint"
 		],
 		"fabric-datagen": [
-			"xyz.merith.Bakers.Template.BakersDataGenerator"
+			"xyz.merith.Bakery.Template.DataGenerator"
 		]
 	},
 	"depends": {
 		"fabricloader": ">=0.15.11",
 		"minecraft": "~1.21",
 		"java": ">=21",
-		"fabric-api": "*",
-		"ovenlib" : ">=${ovenlib}",
+		"fabric-api": "*"
+	},
+	"recommends": {
 		"polymer-core" : ">=${polymer}"
 	}
 }
