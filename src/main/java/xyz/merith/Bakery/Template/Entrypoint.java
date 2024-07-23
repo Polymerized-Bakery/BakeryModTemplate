@@ -1,4 +1,4 @@
-package xyz.merith.Bakery.Template;
+package xyz.merith.bakery.template;
 
 import net.fabricmc.api.ModInitializer;
 
@@ -11,31 +11,34 @@ import org.slf4j.LoggerFactory;
 import xyz.merith.oven.ItemGroups.GroupFactory;
 
 public class Entrypoint implements ModInitializer {
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final String MOD_ID = "bakers-template";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    // This logger is used to write text to the console and the log file.
+    // It is considered best practice to use your mod id as the logger's name.
+    // That way, it's clear which mod wrote info, warnings, and errors.
+    public static final String MOD_ID = "bakers_template";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+    @Override
+    public void onInitialize() {
+        LOGGER.info(MOD_ID+" Loading!");
 
-	@Override
-	public void onInitialize() {
-		LOGGER.info(MOD_ID+" Loading!");
-		ItemGroup.Builder TEMPLATE_GROUP = new GroupFactory().createGroup(Identifier.of(MOD_ID, "template"), Text.literal("Template"), Items.SCAFFOLDING);
+        SimpleBlocks.register();
+        SimpleTools.register();
 
-		TEMPLATE_GROUP.entries((ctx, e) -> {
-			// Add all tools from SIMPLE_TOOLS
-			e.add(SimpleTools.SIMPLE_TOOLS.AXE);
-			e.add(SimpleTools.SIMPLE_TOOLS.PICKAXE);
-			e.add(SimpleTools.SIMPLE_TOOLS.SHOVEL);
-			e.add(SimpleTools.SIMPLE_TOOLS.HOE);
-			e.add(SimpleTools.SIMPLE_TOOLS.SWORD);
+        ItemGroup.Builder TEMPLATE_GROUP = new GroupFactory().createGroup(Identifier.of(MOD_ID, "template"), Text.literal("Template"), Items.SCAFFOLDING);
 
-			// Add blocks
-			e.add(SimpleBlocks.BLOCK_SOLID);
-			e.add(SimpleBlocks.BLOCK_CLEAR);
-		});
-		new GroupFactory().register(Identifier.of(MOD_ID, "simple"), TEMPLATE_GROUP.build());
-		LOGGER.info(MOD_ID+" Done!");
-	}
+        TEMPLATE_GROUP.entries((ctx, e) -> {
+            // Add all tools from SIMPLE_TOOLS
+            e.add(SimpleTools.SIMPLE_TOOLS.AXE);
+            e.add(SimpleTools.SIMPLE_TOOLS.PICKAXE);
+            e.add(SimpleTools.SIMPLE_TOOLS.SHOVEL);
+            e.add(SimpleTools.SIMPLE_TOOLS.HOE);
+            e.add(SimpleTools.SIMPLE_TOOLS.SWORD);
+
+            // Add blocks
+            e.add(SimpleBlocks.BLOCK_SOLID);
+            e.add(SimpleBlocks.BLOCK_CLEAR);
+        });
+        new GroupFactory().register(Identifier.of(MOD_ID, "simple"), TEMPLATE_GROUP.build());
+        LOGGER.info(MOD_ID+" Done!");
+    }
 }

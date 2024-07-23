@@ -1,4 +1,4 @@
-package xyz.merith.Bakery.Template.datagen;
+package xyz.merith.bakery.template.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
@@ -7,7 +7,7 @@ import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.loot.LootTable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryWrapper;
-import xyz.merith.Bakery.Template.SimpleBlocks;
+import xyz.merith.bakery.template.SimpleBlocks;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;

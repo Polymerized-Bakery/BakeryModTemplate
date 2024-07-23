@@ -1,4 +1,4 @@
-package xyz.merith.Bakery.Template;
+package xyz.merith.bakery.template;
 
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
@@ -22,4 +22,6 @@ public class SimpleTools {
         );
         SIMPLE_TOOLS = new ToolFactory().registerTools(Entrypoint.MOD_ID, "simple", SIMPLE_TOOL_MATERIAL);
     }
+
+    public static void register() { }
 }
